@@ -8,6 +8,7 @@ import { Router, NavigationStart, Event as NavigationEvent } from '@angular/rout
 export class HeaderComponent {
   logo: string = 'assets/images/logo-light-horizontal.png';
   showMenu: boolean = false;
+  showAllMenu: boolean = false;
 
   constructor(private router: Router) { }
   openMenu() {
