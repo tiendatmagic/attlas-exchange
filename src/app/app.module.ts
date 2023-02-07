@@ -16,6 +16,7 @@ import { MarketsComponent } from './components/markets/markets.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoinPriceComponent } from './components/coin-price/coin-price.component';
+import { SupportComponent } from './components/support/support.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { CoinPriceComponent } from './components/coin-price/coin-price.component
     FreeCryptoComponent,
     MarketsComponent,
     HomeComponent,
-    CoinPriceComponent
+    CoinPriceComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,

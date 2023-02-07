@@ -17,7 +17,6 @@ export class CoinPriceComponent {
     clearInterval(run);
     this.data.getPrice().subscribe((res: any) => {
       this.coinLists = (res['data']);
-      console.log(this.coinLists);
       localStorage.setItem("coinLists", JSON.stringify(this.coinLists));
       run = setInterval(() => {
         this.loadData();

@@ -16,7 +16,6 @@ export class MarketsComponent {
     clearInterval(run);
     this.data.getPrice().subscribe((res: any) => {
       this.coinLists = (res['data']);
-      console.log(this.coinLists);
       localStorage.setItem("coinLists", JSON.stringify(this.coinLists));
       this.isLoading = false;
       run = setInterval(() => {
