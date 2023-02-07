@@ -14,12 +14,11 @@ export class MarketsComponent {
   constructor(private http: HttpClient, private data: DataService) { }
 
   ngOnInit() {
-    for (var i = 0; i < 10; i++) {
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
+    {
+      for (var i = 0; i < 10; i++) {
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
+      }
+      this.isLoading = false;
     }
-    console.log(this.coinLists);
-    this.isLoading = false;
   }
-
-
 }
