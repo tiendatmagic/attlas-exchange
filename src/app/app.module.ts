@@ -14,7 +14,7 @@ import { CommitComponent } from './components/commit/commit.component';
 import { FreeCryptoComponent } from './components/free-crypto/free-crypto.component';
 import { MarketsComponent } from './components/markets/markets.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,8 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
