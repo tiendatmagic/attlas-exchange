@@ -13,18 +13,20 @@ export class MarketsComponent {
   constructor(private http: HttpClient, private data: DataService) { }
 
   loadData() {
+    var run;
+    clearInterval(run);
     this.data.getPrice().subscribe((res: any) => {
       this.coinLists = (res['data']);
       console.log(this.coinLists);
       this.isLoading = false;
-
+      run = setInterval(() => {
+        this.loadData();
+      }, 40000)
     }
     );
   }
 
   ngOnInit() {
-    setInterval(() => {
-      this.loadData();
-    }, 40000)
+    this.loadData();
   }
 }
