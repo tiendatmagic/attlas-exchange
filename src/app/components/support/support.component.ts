@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./support.component.scss']
 })
 export class SupportComponent {
-
+  supportHeroImage: string = 'assets/images/support_hero.png';
 }
