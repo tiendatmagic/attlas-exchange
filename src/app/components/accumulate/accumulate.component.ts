@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AccumulateComponent {
   vndcImage: string = 'assets/images/attlas_vndc.png';
+  stakingVndcImage: string = 'assets/images/attlas_staking_vndc.png';
 }
