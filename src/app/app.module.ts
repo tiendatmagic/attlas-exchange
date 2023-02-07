@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { InvestTradingComponent } from './components/invest-trading/invest-trading.component';
+import { AccumulateComponent } from './components/accumulate/accumulate.component';
+import { CommitComponent } from './components/commit/commit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { InvestTradingComponent } from './components/invest-trading/invest-tradi
     FooterComponent,
     SliderComponent,
     StatisticsComponent,
-    InvestTradingComponent
+    InvestTradingComponent,
+    AccumulateComponent,
+    CommitComponent
   ],
   imports: [
     BrowserModule,
