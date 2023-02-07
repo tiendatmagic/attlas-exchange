@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./invest-trading.component.scss']
 })
 export class InvestTradingComponent {
-
+  swapImage: string = './assets/images/attlas_swap.png';
 }
