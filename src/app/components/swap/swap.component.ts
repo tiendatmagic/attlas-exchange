@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./swap.component.scss']
 })
 export class SwapComponent {
+  usdtCoin: string = 'assets/images/usdt.png';
+  btcCoin: string = 'assets/images/btc.png';
 
 }
