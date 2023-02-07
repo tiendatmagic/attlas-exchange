@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   logo: string = 'assets/images/logo-light-horizontal.png';
+  showMenu: boolean = false;
+  openMenu() {
+    this.showMenu = !this.showMenu;
+  }
 }
