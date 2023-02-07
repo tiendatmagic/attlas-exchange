@@ -19,6 +19,7 @@ import { CoinPriceComponent } from './components/coin-price/coin-price.component
 import { SupportComponent } from './components/support/support.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { AboutComponent } from './components/about/about.component';
+import { SwapComponent } from './components/swap/swap.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { AboutComponent } from './components/about/about.component';
     CoinPriceComponent,
     SupportComponent,
     NotificationComponent,
-    AboutComponent
+    AboutComponent,
+    SwapComponent
   ],
   imports: [
     BrowserModule,
