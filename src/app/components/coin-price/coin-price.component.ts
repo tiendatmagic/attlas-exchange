@@ -25,12 +25,21 @@ export class CoinPriceComponent {
     }
     );
   }
+  exportData() {
+    setInterval(() => {
+      this.coinLists.length = 0;
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
+    }, 40000)
+  }
 
   ngOnInit() {
     if (localStorage.getItem("coinLists")) {
       this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
       this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
       this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
+      this.exportData();
     }
     else {
       this.loadData();
