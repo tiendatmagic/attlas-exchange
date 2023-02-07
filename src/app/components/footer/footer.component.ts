@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   logo: string = 'assets/images/logo-full-v-light.png';
+  androidIcon: string = 'assets/images/icon_android.png';
+  iosIcon: string = 'assets/images/icon_ios.png';
 }
