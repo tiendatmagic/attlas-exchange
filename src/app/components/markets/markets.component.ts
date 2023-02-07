@@ -17,14 +17,14 @@ export class MarketsComponent {
       this.coinLists = (res['data']);
       console.log(this.coinLists);
       this.isLoading = false;
-      setInterval(() => {
-        this.loadData();
-      }, 40000)
+
     }
     );
   }
 
   ngOnInit() {
-    this.loadData();
+    setInterval(() => {
+      this.loadData();
+    }, 40000)
   }
 }
