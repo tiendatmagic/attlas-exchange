@@ -8,6 +8,7 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { InvestTradingComponent } from './components/invest-trading/invest-trading.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     MainComponent,
     FooterComponent,
     SliderComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    InvestTradingComponent
   ],
   imports: [
     BrowserModule,
