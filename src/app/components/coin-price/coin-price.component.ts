@@ -3,14 +3,15 @@ import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-markets',
-  templateUrl: './markets.component.html',
-  styleUrls: ['./markets.component.scss']
+  selector: 'app-coin-price',
+  templateUrl: './coin-price.component.html',
+  styleUrls: ['./coin-price.component.scss']
 })
-export class MarketsComponent {
+export class CoinPriceComponent {
   coinLists: any = [];
-  isLoading: boolean = true;
+
   constructor(private http: HttpClient, private data: DataService) { }
+
   loadData() {
     var run;
     clearInterval(run);
@@ -18,7 +19,6 @@ export class MarketsComponent {
       this.coinLists = (res['data']);
       console.log(this.coinLists);
       localStorage.setItem("coinLists", JSON.stringify(this.coinLists));
-      this.isLoading = false;
       run = setInterval(() => {
         this.loadData();
       }, 40000)
@@ -28,10 +28,9 @@ export class MarketsComponent {
 
   ngOnInit() {
     if (localStorage.getItem("coinLists")) {
-      for (var i = 0; i < 10; i++) {
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
-      }
-      this.isLoading = false;
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
     }
     else {
       this.loadData();

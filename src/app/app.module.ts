@@ -15,6 +15,7 @@ import { FreeCryptoComponent } from './components/free-crypto/free-crypto.compon
 import { MarketsComponent } from './components/markets/markets.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CoinPriceComponent } from './components/coin-price/coin-price.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommitComponent,
     FreeCryptoComponent,
     MarketsComponent,
-    HomeComponent
+    HomeComponent,
+    CoinPriceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<div class="mt-[60px] flex flex-col items-center justify-center lg:mt-[120px]">
+  <div class="text-3xl text-center font-bold whitespace-pre-line md:whitespace-normal lg:text-5xl leading-[56px]">
+    Xem giá coin thời gian thực
+  </div>
+  <div class="w-[80px] h-[5px] bg-indigo-500 rounded lg:mt-[23px]"></div>
+</div>
+
+<div class="px-2 md:px-14 lg:px-24">
+  <div class="flex justify-evenly gap-5 my-14">
+    <div class="w-1/4 shadow-posts rounded-xl p-5" *ngFor="let coinList of coinLists">
+      <div class="text-2xl font-semibold">
+        <p>{{ coinList['b'] }}</p>
+      </div>
+
+      <div class="mt-3 text-lg">
+        <img src="https://data.attlas.io/api/v1/chart/sparkline?symbol={{ coinList['b'] }}USDT&broker=ATTLAS_SPOT"
+          alt="" class="h-[70px]">
+      </div>
+      <div class="mt-3 text-lg">
+        <p>{{ coinList['p'] | currency }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flex justify-center">
+    <a routerLink="/markets">
+      <button type="button"
+        class="flex justify-center items-center rounded-[6px] transition md:text-base lg:text-lg font-bold text-white h-[44px] md:h-[64px] md:px-[44px] bg-indigo-600">
+        Xem thêm
+        <span class="ml-[8px] mt-[4px]">
+        </span>
+      </button>
+    </a>
+  </div>
+</div>
