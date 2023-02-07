@@ -8,13 +8,16 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./markets.component.scss']
 })
 export class MarketsComponent {
-  coinLists: any;
+  coinLists: any = [];
+  any = [];
   isLoading: boolean = true;
   constructor(private http: HttpClient, private data: DataService) { }
 
   ngOnInit() {
-
-    this.coinLists = JSON.parse(`${localStorage.getItem("coinLists")}`);
+    for (var i = 0; i < 10; i++) {
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
+    }
+    console.log(this.coinLists);
     this.isLoading = false;
   }
 
