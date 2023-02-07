@@ -13,6 +13,7 @@ import { AccumulateComponent } from './components/accumulate/accumulate.componen
 import { CommitComponent } from './components/commit/commit.component';
 import { FreeCryptoComponent } from './components/free-crypto/free-crypto.component';
 import { MarketsComponent } from './components/markets/markets.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MarketsComponent } from './components/markets/markets.component';
     AccumulateComponent,
     CommitComponent,
     FreeCryptoComponent,
-    MarketsComponent
+    MarketsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
