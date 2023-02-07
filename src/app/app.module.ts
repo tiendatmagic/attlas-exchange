@@ -12,6 +12,7 @@ import { InvestTradingComponent } from './components/invest-trading/invest-tradi
 import { AccumulateComponent } from './components/accumulate/accumulate.component';
 import { CommitComponent } from './components/commit/commit.component';
 import { FreeCryptoComponent } from './components/free-crypto/free-crypto.component';
+import { MarketsComponent } from './components/markets/markets.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FreeCryptoComponent } from './components/free-crypto/free-crypto.compon
     InvestTradingComponent,
     AccumulateComponent,
     CommitComponent,
-    FreeCryptoComponent
+    FreeCryptoComponent,
+    MarketsComponent
   ],
   imports: [
     BrowserModule,
