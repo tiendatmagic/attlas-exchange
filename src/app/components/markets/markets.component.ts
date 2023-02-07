@@ -8,5 +8,23 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./markets.component.scss']
 })
 export class MarketsComponent {
+  coinLists: any;
+  isLoading: boolean = true;
   constructor(private http: HttpClient, private data: DataService) { }
+
+  loadData() {
+    this.data.getPrice().subscribe((res: any) => {
+      this.coinLists = (res['data']);
+      console.log(this.coinLists);
+      this.isLoading = false;
+      setInterval(() => {
+        this.loadData();
+      }, 40000)
+    }
+    );
+  }
+
+  ngOnInit() {
+    this.loadData();
+  }
 }
