@@ -22,7 +22,7 @@ export class CoinPriceComponent {
       this.coinLists.push((res['data'])[4]);
       run = setInterval(() => {
         this.loadData();
-      }, 40000)
+      }, 10000)
     }
     );
   }
