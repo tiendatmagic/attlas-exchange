@@ -22,7 +22,7 @@ export class AppComponent {
       this.isLoading = false;
       run = setInterval(() => {
         this.loadData();
-      }, 10000)
+      }, 40000)
     }
     );
   }

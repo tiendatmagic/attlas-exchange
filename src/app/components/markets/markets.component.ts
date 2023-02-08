@@ -20,7 +20,7 @@ export class MarketsComponent {
       this.isLoading = false;
       run = setInterval(() => {
         this.loadData();
-      }, 10000)
+      }, 40000)
     }
     );
   }
