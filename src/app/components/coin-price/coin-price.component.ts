@@ -15,6 +15,7 @@ export class CoinPriceComponent {
   loadData() {
     var run;
     clearInterval(run);
+    this.coinLists.length = 0;
     this.data.getPrice().subscribe((res: any) => {
       this.coinLists.push((res['data'])[0]);
       this.coinLists.push((res['data'])[2]);
