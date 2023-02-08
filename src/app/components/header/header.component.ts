@@ -13,5 +13,6 @@ export class HeaderComponent {
   constructor(private router: Router) { }
   openMenu() {
     this.showMenu = !this.showMenu;
+    this.showAllMenu = false
   }
 }
