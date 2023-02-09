@@ -16,15 +16,15 @@ export class CoinPriceComponent {
     var run;
     clearInterval(run);
     this.coinLists.length = 0;
-    this.data.getPrice().subscribe((res: any) => {
-      this.coinLists.push((res['data'])[0]);
-      this.coinLists.push((res['data'])[2]);
-      this.coinLists.push((res['data'])[4]);
-      run = setInterval(() => {
-        this.loadData();
-      }, 40000)
-    }
-    );
+
+    run = setInterval(() => {
+      this.data.getPrice().subscribe((res: any) => {
+        this.coinLists.push((res['data'])[0]);
+        this.coinLists.push((res['data'])[2]);
+        this.coinLists.push((res['data'])[4]);
+      }
+      );
+    }, 40000)
   }
 
   ngOnInit() {
