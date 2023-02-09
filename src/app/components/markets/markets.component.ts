@@ -16,17 +16,22 @@ export class MarketsComponent {
     clearInterval(run);
 
     run = setInterval(() => {
-      this.data.getPrice().subscribe((res: any) => {
-        this.coinLists.length = 0;
-        for (var i = 0; i < 10; i++) {
-          this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
-        }
-      });
+      this.loadCoin();
     }, 40000)
 
   }
 
+  loadCoin() {
+    this.coinLists.length = 0;
+    this.data.getPrice().subscribe((res: any) => {
+      for (var i = 0; i < 10; i++) {
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
+      }
+    });
+  }
+
   ngOnInit() {
+    this.loadCoin();
     this.loadData();
   }
 

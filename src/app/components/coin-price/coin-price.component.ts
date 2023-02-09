@@ -17,16 +17,21 @@ export class CoinPriceComponent {
     clearInterval(run);
 
     run = setInterval(() => {
-      this.data.getPrice().subscribe((res: any) => {
-        this.coinLists.length = 0;
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
-      });
+      this.loadCoin();
     }, 40000)
   }
 
+  loadCoin() {
+    this.coinLists.length = 0;
+    this.data.getPrice().subscribe((res: any) => {
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
+    });
+  }
+
   ngOnInit() {
+    this.loadCoin();
     this.loadData();
   }
 
