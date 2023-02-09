@@ -27,6 +27,15 @@ export class CoinPriceComponent {
   }
 
   ngOnInit() {
+    if (localStorage.getItem("coinLists")) {
+      var run;
+      clearInterval(run);
+      for (var i = 0; i < 10; i++) {
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
+      }
+    }
     this.loadData();
   }
 }
