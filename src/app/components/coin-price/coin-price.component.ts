@@ -17,23 +17,17 @@ export class CoinPriceComponent {
     clearInterval(run);
 
     run = setInterval(() => {
-      this.coinLists.length = 0;
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
+      this.data.getPrice().subscribe((res: any) => {
+        this.coinLists.length = 0;
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
+      });
     }, 40000)
   }
 
   ngOnInit() {
+    this.loadData();
+  }
 
-  }
-  ngDoCheck() {
-    if (this.data.isData) {
-      this.coinLists.length = 0;
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
-      console.log(this.data.isData);
-    }
-  }
 }
