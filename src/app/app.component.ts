@@ -27,6 +27,11 @@ export class AppComponent {
 
   }
   ngOnInit() {
+    this.data.getPrice().subscribe((res: any) => {
+      this.coinLists = (res['data']);
+      localStorage.setItem("coinLists", JSON.stringify(this.coinLists));
+      this.isLoading = false;
+    });
     this.loadData();
   }
 }
