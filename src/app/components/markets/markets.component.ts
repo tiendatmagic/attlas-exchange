@@ -22,12 +22,14 @@ export class MarketsComponent {
   }
 
   loadCoin() {
+    this.isLoading = true;
     this.coinLists.length = 0;
     this.data.getPrice().subscribe((res: any) => {
       for (var i = 0; i < 10; i++) {
         this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
       }
     });
+    this.isLoading = false;
   }
 
   ngOnInit() {
