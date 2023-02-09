@@ -17,11 +17,9 @@ export class MarketsComponent {
 
     run = setInterval(() => {
       this.coinLists.length = 0;
-      this.data.getPrice().subscribe((res: any) => {
-        this.coinLists = (res['data']);
-        localStorage.setItem("coinLists", JSON.stringify(this.coinLists));
-        this.isLoading = false;
-      });
+      for (var i = 0; i < 10; i++) {
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
+      }
     }, 40000)
   }
 
@@ -29,16 +27,11 @@ export class MarketsComponent {
     if (localStorage.getItem("coinLists")) {
       var run;
       clearInterval(run);
-      run = setInterval(() => {
-        this.coinLists.length = 0;
-        for (var i = 0; i < 10; i++) {
-          this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
-        }
-        this.isLoading = false;
-      }, 40000)
+      this.isLoading = false;
+      for (var i = 0; i < 10; i++) {
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
+      }
     }
-    else {
-      this.loadData();
-    }
+    this.loadData();
   }
 }
