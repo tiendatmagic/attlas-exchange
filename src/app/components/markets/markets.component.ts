@@ -28,8 +28,9 @@ export class MarketsComponent {
       for (var i = 0; i < 10; i++) {
         this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
       }
+      this.isLoading = false;
     });
-    this.isLoading = false;
+
   }
 
   ngOnInit() {
