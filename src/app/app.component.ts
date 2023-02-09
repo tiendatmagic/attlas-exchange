@@ -18,10 +18,12 @@ export class AppComponent {
     clearInterval(run);
 
     run = setInterval(() => {
+      this.data.isData = false;
       this.data.getPrice().subscribe((res: any) => {
         this.coinLists = (res['data']);
         localStorage.setItem("coinLists", JSON.stringify(this.coinLists));
         this.isLoading = false;
+        this.data.isData = true;
       });
     }, 40000)
 
@@ -31,7 +33,13 @@ export class AppComponent {
       this.coinLists = (res['data']);
       localStorage.setItem("coinLists", JSON.stringify(this.coinLists));
       this.isLoading = false;
+      this.data.isData = true;
     });
     this.loadData();
+  }
+  ngDoCheck() {
+    if (this.data.isData) {
+      // this.data.isData = false;
+    }
   }
 }

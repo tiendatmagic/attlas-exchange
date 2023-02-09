@@ -24,14 +24,14 @@ export class MarketsComponent {
   }
 
   ngOnInit() {
-    if (localStorage.getItem("coinLists")) {
-      var run;
-      clearInterval(run);
+
+  }
+  ngDoCheck() {
+    if (this.data.isData) {
+      this.coinLists.length = 0;
       for (var i = 0; i < 10; i++) {
         this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
       }
-      this.isLoading = false;
     }
-    this.loadData();
   }
 }
