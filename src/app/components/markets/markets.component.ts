@@ -11,6 +11,7 @@ export class MarketsComponent {
   coinLists: any = [];
   isLoading: boolean = true;
   take: number = 10;
+  max: number = 0;
   constructor(private http: HttpClient, private data: DataService) { }
   loadData() {
     var run;
@@ -26,9 +27,11 @@ export class MarketsComponent {
     this.isLoading = true;
     this.coinLists.length = 0;
     this.data.getPrice().subscribe((res: any) => {
+      this.max = res['data'].length;
       for (var i = 0; i < take; i++) {
         this.coinLists.push(res['data'][i]);
       }
+
       this.isLoading = false;
     });
 
@@ -39,8 +42,10 @@ export class MarketsComponent {
     this.loadData();
   }
   onMore() {
-    this.take += 10;
-    this.loadCoin(this.take);
+    this.take += 700;
+    if (this.take < this.max) {
+      this.loadCoin(this.take);
+    }
   }
 
 }
