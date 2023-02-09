@@ -10,22 +10,23 @@ import { DataService } from 'src/app/services/data.service';
 export class MarketsComponent {
   coinLists: any = [];
   isLoading: boolean = true;
+  take: number = 10;
   constructor(private http: HttpClient, private data: DataService) { }
   loadData() {
     var run;
     clearInterval(run);
 
     run = setInterval(() => {
-      this.loadCoin();
+      this.loadCoin(this.take);
     }, 40000)
 
   }
 
-  loadCoin() {
+  loadCoin(take: number = 10) {
     this.isLoading = true;
     this.coinLists.length = 0;
     this.data.getPrice().subscribe((res: any) => {
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < take; i++) {
         this.coinLists.push(res['data'][i]);
       }
       this.isLoading = false;
@@ -34,8 +35,12 @@ export class MarketsComponent {
   }
 
   ngOnInit() {
-    this.loadCoin();
+    this.loadCoin(this.take);
     this.loadData();
+  }
+  onMore() {
+    this.take += 10;
+    this.loadCoin(this.take);
   }
 
 }
