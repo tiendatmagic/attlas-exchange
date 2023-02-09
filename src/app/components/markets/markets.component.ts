@@ -42,7 +42,7 @@ export class MarketsComponent {
     this.loadData();
   }
   onMore() {
-    this.take += 700;
+    this.take += 10;
     if (this.take < this.max) {
       this.loadCoin(this.take);
     }
