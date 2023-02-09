@@ -24,9 +24,9 @@ export class CoinPriceComponent {
   loadCoin() {
     this.coinLists.length = 0;
     this.data.getPrice().subscribe((res: any) => {
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
-      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
+      this.coinLists.push(res['data'][0]);
+      this.coinLists.push(res['data'][2]);
+      this.coinLists.push(res['data'][4]);
     });
   }
 

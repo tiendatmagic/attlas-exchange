@@ -17,7 +17,7 @@ export class MarketsComponent {
 
     run = setInterval(() => {
       this.loadCoin();
-    }, 40000)
+    }, 10000)
 
   }
 
@@ -26,7 +26,7 @@ export class MarketsComponent {
     this.coinLists.length = 0;
     this.data.getPrice().subscribe((res: any) => {
       for (var i = 0; i < 10; i++) {
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
+        this.coinLists.push(res['data'][i]);
       }
       this.isLoading = false;
     });
