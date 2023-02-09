@@ -27,10 +27,10 @@ export class MarketsComponent {
     if (localStorage.getItem("coinLists")) {
       var run;
       clearInterval(run);
-      this.isLoading = false;
       for (var i = 0; i < 10; i++) {
         this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[i]);
       }
+      this.isLoading = false;
     }
     this.loadData();
   }
