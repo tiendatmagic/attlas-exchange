@@ -15,15 +15,14 @@ export class CoinPriceComponent {
   loadData() {
     var run;
     clearInterval(run);
-    this.coinLists.length = 0;
 
     run = setInterval(() => {
-      this.data.getPrice().subscribe((res: any) => {
-        this.coinLists.push((res['data'])[0]);
-        this.coinLists.push((res['data'])[2]);
-        this.coinLists.push((res['data'])[4]);
+      this.coinLists.length = 0;
+      for (var i = 0; i < 10; i++) {
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
       }
-      );
     }, 40000)
   }
 
