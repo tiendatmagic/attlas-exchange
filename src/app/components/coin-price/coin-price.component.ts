@@ -18,11 +18,9 @@ export class CoinPriceComponent {
 
     run = setInterval(() => {
       this.coinLists.length = 0;
-      for (var i = 0; i < 10; i++) {
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
-      }
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
     }, 40000)
   }
 
@@ -30,11 +28,10 @@ export class CoinPriceComponent {
     if (localStorage.getItem("coinLists")) {
       var run;
       clearInterval(run);
-      for (var i = 0; i < 10; i++) {
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
-        this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
-      }
+      this.coinLists.length = 0;
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[0]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[2]);
+      this.coinLists.push(JSON.parse(`${localStorage.getItem("coinLists")}`)[4]);
     }
     this.loadData();
   }
