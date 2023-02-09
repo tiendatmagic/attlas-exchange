@@ -17,7 +17,7 @@ export class MarketsComponent {
 
     run = setInterval(() => {
       this.loadCoin();
-    }, 10000)
+    }, 40000)
 
   }
 
