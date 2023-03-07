@@ -44,6 +44,34 @@ export class MarketsComponent {
       this.isLoading = false;
     });
 
+    /*
+      this.data.getPrice().subscribe((res: any) => {
+      this.max = Object.keys(res).length;
+      let result: any = [];
+
+      Object.keys(res).forEach(function (key) {
+        let obj = res[key];
+        obj["name"] = key;
+        result.push(obj);
+
+      });
+
+      for (var i = 0; i < take; i++) {
+        this.coinLists.push(result[i]);
+      }
+
+      this.isLoading = false;
+    });
+    */
+
+    this.data.getPrice().subscribe((res: any) => {
+      this.max = res['data'].length;
+      for (var i = 0; i < take; i++) {
+        this.coinLists.push(res['data'][i]);
+      }
+
+      this.isLoading = false;
+    });
   }
 
   ngOnInit() {
