@@ -26,23 +26,6 @@ export class MarketsComponent {
   loadCoin(take: number = 10) {
     this.isLoading = true;
     this.coinLists.length = 0;
-    this.data.getPrice().subscribe((res: any) => {
-      this.max = Object.keys(res).length;
-      let result: any = [];
-
-      Object.keys(res).forEach(function (key) {
-        let obj = res[key];
-        obj["name"] = key;
-        result.push(obj);
-
-      });
-
-      for (var i = 0; i < take; i++) {
-        this.coinLists.push(result[i]);
-      }
-
-      this.isLoading = false;
-    });
 
     /*
       this.data.getPrice().subscribe((res: any) => {
