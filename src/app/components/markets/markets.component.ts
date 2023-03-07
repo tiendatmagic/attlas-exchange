@@ -30,8 +30,8 @@ export class MarketsComponent {
       this.max = Object.keys(res).length;
       let result: any = [];
 
-      Object.keys(arr).forEach(function (key) {
-        let obj = arr[key];
+      Object.keys(res).forEach(function (key) {
+        let obj = res[key];
         obj["name"] = key;
         result.push(obj);
 
