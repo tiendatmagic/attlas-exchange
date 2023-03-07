@@ -40,6 +40,7 @@ export class MarketsComponent {
       this.isLoading = false;
     });
 
+
     this.data.getPrice().subscribe((res: any) => {
       this.max = res['data'].length;
       for (var i = 0; i < take; i++) {
