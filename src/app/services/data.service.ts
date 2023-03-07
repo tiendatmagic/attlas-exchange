@@ -12,6 +12,6 @@ export class DataService {
     return this.http.get('https://api.attlas.io/api/v1/exchange/market_watch');
   }
   getMorePrice() {
-    return this.http.get('https://exchange.vndc.io/exchange/api/v1/user/charts?baseCurrency=USDT');
+    return this.http.get('https://api.invest.vndc.io/api/v1/currency?hasChart=true');
   }
 }

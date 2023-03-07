@@ -27,25 +27,18 @@ export class MarketsComponent {
     this.isLoading = true;
     this.coinLists.length = 0;
 
+    var list: any = [];
+    this.data.getMorePrice().subscribe((res: any) => {
+      console.log(res['data']);
+      this.max = res['data'].length;
+      let result: any = [];
 
-    // this.data.getMorePrice().subscribe((res: any) => {
-    //   this.max = Object.keys(res).length;
-    //   let result: any = [];
-
-    //   Object.keys(res).forEach(function (key) {
-    //     let obj = res[key];
-    //     obj["name"] = key;
-    //     result.push(obj);
-
-    //   });
-
-    //   for (var i = 0; i < take; i++) {
-    //     this.coinLists.push(result[i]);
-    //   }
-    //   console.log(this.coinLists);
-    //   this.isLoading = false;
-    // });
-
+      for (var i = 0; i < take; i++) {
+        list.push(res['data'][i]);
+      }
+      console.log(list);
+      this.isLoading = false;
+    });
 
     this.data.getPrice().subscribe((res: any) => {
       this.max = res['data'].length;
