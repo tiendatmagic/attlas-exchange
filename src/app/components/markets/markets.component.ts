@@ -27,11 +27,18 @@ export class MarketsComponent {
     this.isLoading = true;
     this.coinLists.length = 0;
     this.data.getPrice().subscribe((res: any) => {
-      this.max = res['data'].length;
-      for (var i = 0; i < take; i++) {
-        this.coinLists.push(res['data'][i]);
-      }
+      let arr = res;
+      this.max = Object.keys(res).length;
+      let result: any = [];
 
+      Object.keys(arr).forEach(function (key) {
+        let obj = arr[key];
+        obj["name"] = key;
+        result.push(obj);
+
+      });
+
+      this.coinLists = result;
       this.isLoading = false;
     });
 
